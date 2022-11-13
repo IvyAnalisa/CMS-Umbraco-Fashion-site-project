@@ -1,0 +1,198 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    background-color: powderblue;
+}
+
+/**********************************************************
+                       site-header
+**********************************************************/
+.site-header {
+    background-color: lightpink;
+    padding: 2em 2em;
+    margin-top: 20px;
+}
+/**********************************************************
+                       hero
+**********************************************************/
+/*Hero */
+
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+}
+
+
+.header-caption .btn {
+    background-color: hotpink;
+    color: white;
+    float: revert;
+}
+
+.header-caption {
+    margin-top: 60px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    color: yellow;
+}
+
+.flex-container {
+    background-color: dodgerblue;
+    padding: 10px;
+    flex: 50%;
+    margin-top: 10px;
+}
+
+
+
+.heroImage {
+    height: 450px;
+    width: 600px;
+}
+
+
+
+/**********************************************************
+                Spots
+  **********************************************************/
+.spots d-flex {
+    margin-top: 10px;
+    border: 1px solid white;
+}
+    .spots d-flex > div {
+    }
+    .spot-container {
+    height: 350px;
+    width: 450px;
+   
+    text-align: center;
+    color: white;
+    
+}
+/* Centered text */
+.centered{
+    font-size: 40px;
+    text-align: center;
+   
+}
+
+ 
+  
+  
+  /**********************************************************
+                         site-footer
+  **********************************************************/
+/***footer***/
+footer  {
+    background-color: pink;
+}
+#icons{
+    font-size: 50px;
+    text-align: center;
+    padding-top: 20px;
+    font-style:oblique;
+    font-family:'Arial Nova';
+}
+
+.footer-flex-container {
+    display: flex;
+    flex-direction: row;
+    font-size: 30px;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.footer-widget {
+    flex: 50%;
+    position: relative;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+    .footer-widget h2 {
+        font-size: 25px;
+        white-space: nowrap;
+        margin-bottom: 20px;
+    }
+
+    .footer-widget ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+        .footer-widget ul li {
+            margin-bottom: 12px;
+        }
+
+            .footer-widget ul li:last-child {
+                margin-bottom: 0;
+            }
+
+            .footer-widget ul li a {
+                color: #666666;
+                white-space: nowrap;
+                display: block;
+                line-height: 23px;
+                transition: all .3s;
+            }
+
+                .footer-widget ul li a::before {
+                    content: '\f105';
+                    font-family: 'Font Awesome 5 Free';
+                    font-weight: 900;
+                    padding-right: 5px;
+                }
+
+                .footer-widget ul li a:hover {
+                    color: #FF6F61;
+                }
+
+                    .footer-widget ul li a:hover::before {
+                        font-family: 'Font Awesome 5 Free';
+                        font-weight: 900;
+                    }
+
+.footer-flex-container .contact-info p {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+    .footer-flex-container .contact-info p i {
+        margin-right: 5px;
+    }
+
+.footer-flex-container .social {
+    position: relative;
+    width: 100%;
+}
+
+    .footer-flex-container .social a {
+        display: inline-block;
+        margin: 10px 5px 0 0;
+        width: 40px;
+        height: 40px;
+        padding: 6px 0;
+        text-align: center;
+        font-size: 18px;
+       
+        border: white;
+       
+       
+    }
+
+        .footer-flex-container.social a:hover {
+            color: white;
+            border-color: white;
+        }
+
+.footer-widget {
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #666666;
+}
+#icons{
+    font-size:20px;
+}

@@ -1,0 +1,32 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+
+@{
+    var products = Model.Value<IPublishedContent>("ivyProductsProducts");
+   // var productImage = Model.Value<IPublishedContent>("heroImage");
+    
+}
+
+
+
+ <section class="products">
+
+     <h2> Popular products</h2>
+
+    <div class="row"> 
+        
+        @foreach(var product in products.Children){
+
+            var productImage = product.Value<IPublishedContent>("heroImage");
+
+         <div class="card" style="width: 20rem;">
+
+                <img src="@productImage.Url()" class="card-img-top" alt="..." style="width:300px">
+             <div class="card-body">
+                    <h5 class="card-title">@product.Name</h5>
+                <p class="card-text">@product.Value("heroPrice") SEK</p>
+                <a href="@product.Url()" class="btn btn-primary">View Detail</a>
+                </div>
+        </div>
+        } 
+    </div>
+</section>

@@ -1,0 +1,40 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+
+
+@{
+    var elements = Model.Value<IEnumerable<IPublishedElement>>("sp");
+    var products = Model.Value<IPublishedContent>("ivyProductsProducts");
+}
+
+@*
+<div class="spots d-flex">
+
+
+        @foreach (var element in elements)
+        {
+        var imageForSpot = element.Value<IPublishedContent>("spotImage");
+
+        <div class="spot-container">
+        <img src="@imageForSpot.Url()" alt="" style="width:400px;height:400px">
+   
+        <div class="centered"><a href="@products.Url()">@element.Value("heading") </a></div>
+        </div>
+        }
+
+  
+</div>*@
+
+
+<div class="card-group" >
+    @foreach (var element in elements)
+        {
+        var imageForSpot = element.Value<IPublishedContent>("spotImage");
+        <div class="card" style="background-color:aquamarine;position:relative">
+            <img src="@imageForSpot.Url()" class="card-img-top" alt="..." style="width:430px;height:400px">
+    <div class="card-body">
+      <h5 class="card-title" style="text-align:center"><a href="@products.Url()">@element.Value("heading") </a></h5>
+      
+    </div>
+  </div>
+        }
+</div>

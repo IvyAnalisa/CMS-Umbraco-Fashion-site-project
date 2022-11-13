@@ -1,0 +1,34 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.ProductDetailsPage>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+    Layout = "Master.cshtml";
+    //var products = Model.Value<IPublishedContent>("ivyProductsProducts");
+    var productDetailsImage = Model.Value<IPublishedContent>("heroImage");
+
+}
+
+
+
+
+    <div class="card mb-3" style="width: 100%;">
+        <div class="row g-0">
+            
+            <div class="col-md-4">
+              
+                <img src="@productDetailsImage.Url()" class="img-fluid rounded-start" alt="..." style="width: 350px;">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title">@Model.Name</h5>
+                    <p class="card-text">@Model.Description</p>
+                    <p class="card-text" style="text-align:left">@Model.HeroPrice SEK</p>
+                    <p class="card-text" style="float:left"><a href="" class="btn btn-primary">Buy</a></p>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+      
+        

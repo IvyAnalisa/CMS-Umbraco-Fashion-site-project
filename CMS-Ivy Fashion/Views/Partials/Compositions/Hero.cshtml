@@ -1,0 +1,29 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@{
+    Layout = null;
+    var heroImage = Model.Value<IPublishedContent>("heroImage");
+    var linkToProductPage = Model.Value<IPublishedContent>("IvyProductsProducts");
+}
+
+
+
+<!--Hero-->
+<div class="mainslide">
+    <div class="flex-container">
+
+        <div class="header-caption">
+            <p>
+                @Model.Value("heroHeading") <br>
+                @Model.Value("heroMessage")
+            </p>
+            <a href="@linkToProductPage.Url()" class="btn btn-primary">Shop Now</a>
+
+        </div>
+        <div class="w3-content w3-section" style="max-width:800px">
+            <img class="heroImage" src="@heroImage.Url()" style="width:100%">
+        </div>
+
+    </div>
+
+</div>
+

@@ -1,0 +1,44 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.SearchResultsPage>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@using Umbraco.Cms.Core;
+
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+@inject IPublishedContentQuery _publishedContentQuery
+
+@{
+    Layout = "Master.cshtml";
+
+    var query = HttpContextAccessor.HttpContext.Request.Query["q"];
+
+    var searchResult = _publishedContentQuery.Search(query);
+   
+}
+
+
+
+<div class="search-result"> Found @searchResult.Count()  @query  items</div>
+
+<div class="card mb-3 bg-light mb-3" style="width:100%;">
+    <div class="row g-0" >
+        @foreach (var result in searchResult)
+    {
+            var resultImage = result.Content.Value<IPublishedContent>("heroImage");
+        <div class="col-md-4">
+
+                <img src="@resultImage.Url()" class="img-fluid rounded-start" alt="..." style="width: 250px;">
+        </div>
+
+        <div class="col-md-8">
+            <div class="card-body">
+                    <h5 class="card-title">@result.Content.Name</h5>
+                    <p class="card-text">@result.Content.Value("Description")</p>
+                    <p class="card-text" style="text-align:left">Price: @result.Content.Value("heroPrice") SEK</p>
+                    <a href="@result.Content.Url()" class="btn btn-primary" style="width:20%;">View Detail</a>
+                
+            </div>
+        </div>
+     }
+    </div>
+    
+</div>

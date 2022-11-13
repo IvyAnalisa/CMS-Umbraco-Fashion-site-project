@@ -1,0 +1,15 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.Women>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+	Layout = "Master.cshtml";
+    
+}
+
+@{
+    var galleryImage = Model.Value<IEnumerable<IPublishedContent>>("gallery");
+    foreach (var item in galleryImage)
+    {
+        <img src="@item.Url()" style="width:510px" />
+    }
+}

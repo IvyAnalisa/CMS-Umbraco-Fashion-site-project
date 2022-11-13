@@ -1,0 +1,16 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.REA>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+	Layout = "Master.cshtml";
+   
+}
+
+   
+@{
+    var typedMultiMediaPicker = Model.Value<IEnumerable<IPublishedContent>>("sliders");
+    foreach (var item in typedMultiMediaPicker)
+    {
+        <img src="@item.Url()" style="width:510px"  />
+    }
+}
